@@ -167,24 +167,16 @@ function App() {
     }
 
   return(<>
-   <div ref={objectRef}>
-    {width < 1200 && <Sticky pushing context={objectRef} offset={height-50}>
-      <MobileNav />
-    </Sticky>}
-   
-    <Grid doubling centered columns='2'>
-      <Grid.Column>
-        
-          <Segment basic>
-          
-            <Message
+    
+    <Grid container doubling relaxed centered columns={width >= 1300 ? '2' : '1'}>
+      <Grid.Column stretched largeScreen={8} computer={12} tablet={16} mobile={16}>
+                <br></br>
+                <Message
                   warning
                   icon='warning sign'
                   header='This portfolio is still under construction.'
                   content='Built using the MERN stack. (MongoDB, Express, React, and NodeJS) Additionally styled with Semantic UI. '
                 />
-          </Segment>
-            <Container>
               <Routes>
                 <Route exact path="/Contact" element={<Contact theme={theme} />}>
                 </Route>  
@@ -195,14 +187,12 @@ function App() {
                 <Route exact path="/" element={<Home theme={theme} />}>
                 </Route>
               </Routes>
-              
-            </Container>
-          {width > 1200 && <Rail close position='left'>
+            
+          {width >= 1300 && <Rail close='very' position='left'>
             <Sticky
                   bottomOffset={50}
                   attached
                   offset={30}
-                  context={objectRef}
                 >
               <br></br>
               <br></br>
@@ -210,12 +200,10 @@ function App() {
               
             </Sticky>
           </Rail>}
-          
-          <Particles id="tsparticles" init={particlesInit} loaded={particlesLoaded} options={options} />
-          
       </Grid.Column>
     </Grid>
-    </div>
+    {width < 1300 && <MobileNav objectRef={objectRef} />}
+    <Particles id="tsparticles" init={particlesInit} loaded={particlesLoaded} options={options} />
   </>)
 }
 

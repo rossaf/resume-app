@@ -68,7 +68,7 @@ export default function Navbar({theme, shape, onThemeChange, onShapeChange}) {
           <Button.Group widths='5'>
             <Button icon='sun' toggle active={!theme} onClick={onThemeChange}  />
             <Button content={shape.charAt(0).toUpperCase() + shape.slice(1)} onClick={onShapeChange}  />
-            <Button icon='shuffle' />
+            <Button icon='shuffle' disabled />
           </Button.Group>
         </Segment>
     </>)

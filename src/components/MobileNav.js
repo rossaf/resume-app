@@ -1,9 +1,9 @@
 import {useState, useEffect} from "react"
 import {Link} from "react-router-dom"
-import { Segment, Menu, Header, Button, Sidebar, Icon, Grid, Checkbox, Image } from 'semantic-ui-react'
+import { Segment, Menu, Header, Container, Sidebar, Icon, Grid, Checkbox, Sticky } from 'semantic-ui-react'
 
 
-export default function Navbar({theme, onThemeChange, children}) {
+export default function Navbar({theme, onThemeChange, objectRef}) {
   const [active, setActive] = useState("home");
   const [time, setTime] = useState(new Date())
   const [visible, setVisible] = useState(true)
@@ -18,7 +18,8 @@ export default function Navbar({theme, onThemeChange, children}) {
       setActive(e.target.id)
   }
   return (<>
-    <Menu fluid widths={3} icon='labeled' attached='top' inverted={!theme}>
+    <Menu fluid fixed='bottom' inverted={!theme} size='large'>
+      <Container>
             <Link to="/">
               <Menu.Item
                 name='home'
@@ -55,6 +56,8 @@ export default function Navbar({theme, onThemeChange, children}) {
                 onClick={handleMenuClick}
               />
             </Link>
+            </Container>
           </Menu>
+
   </>)
 }

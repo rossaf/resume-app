@@ -11,10 +11,10 @@ export default function Resume({theme}) {
     const { height, width } = useWindowDimensions();
 
     function pdfWidth() {
-        if (width < 1000) {
+        if (width < 1200) {
             return width * 0.95
         } else {
-            return width * 0.474
+            return width * 0.345
         }
     }
 
@@ -23,16 +23,17 @@ export default function Resume({theme}) {
     }
   
     return (<>
-    <Segment inverted={theme}>
-      <Document
-        file="/Resume-2021.pdf"
-        onLoadSuccess={onDocumentLoadSuccess}
-      >
-        <Page pageNumber={numPages} width={pdfWidth()} />
-      </Document>
-      <p>Page {numPages} of {numPages}</p>
-    </Segment>
-
+    <Container>
+      <Segment inverted={theme}>
+        <Document
+          file="/Resume-2021.pdf"
+          onLoadSuccess={onDocumentLoadSuccess}
+        >
+          <Page pageNumber={numPages} width={pdfWidth()} />
+        </Document>
+        <p>Page {numPages} of {numPages}</p>
+      </Segment>
+    </Container>
     
   </>);
 }
