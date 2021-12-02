@@ -15,7 +15,7 @@ export default function Projects({theme}) {
 
     useEffect(() => {
         setError()
-        fetch("http://localhost:5000/projects")
+        fetch("https://portfolio-server-2021.herokuapp.com/projects")
         .then(response => response.json())
         .then(data => {
             console.log(filter)
