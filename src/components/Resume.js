@@ -3,6 +3,7 @@ import { Container, Header, Modal, Button, Segment, Dimmer} from 'semantic-ui-re
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack'
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import useWindowDimensions from "./useWindowDimensions.js"
+import Trans from "./Trans.js"
 
 
 export default function Resume({theme}) {
@@ -12,7 +13,7 @@ export default function Resume({theme}) {
 
     function pdfWidth() {
         if (width < 1200) {
-            return width * 0.95
+            return width * 0.76
         } else {
             return width * 0.345
         }
@@ -23,17 +24,16 @@ export default function Resume({theme}) {
     }
   
     return (<>
-    <Container>
-      <Segment inverted={theme}>
-        <Document
-          file="/Resume-2021.pdf"
-          onLoadSuccess={onDocumentLoadSuccess}
-        >
-          <Page pageNumber={numPages} width={pdfWidth()} />
-        </Document>
-        <p>Page {numPages} of {numPages}</p>
-      </Segment>
-    </Container>
-    
+      <Trans>
+        <Segment inverted={theme}>
+          <Document
+            file="/Resume-2021.pdf"
+            onLoadSuccess={onDocumentLoadSuccess}
+          >
+            <Page pageNumber={numPages} width={pdfWidth()} />
+          </Document>
+          <p>Page {numPages} of {numPages}</p>
+        </Segment>
+      </Trans>
   </>);
 }

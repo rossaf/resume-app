@@ -11,6 +11,6 @@ export default function Trans({children}) {
         
     }, [])
     return (
-        <Transition visible={visible} animation='fade down' duration={500}>{children}</Transition>
+        <Transition visible={visible} animation='fade' duration={1000}>{children}</Transition>
     )
 }

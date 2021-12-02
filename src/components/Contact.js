@@ -9,7 +9,6 @@ export default function Projects({theme}) {
 
     return(<>
         <Trans>
-        <Container>
             <Segment inverted={theme} padded>
                 <Header as='h5'>
                     <Icon name='phone' />
@@ -32,11 +31,8 @@ export default function Projects({theme}) {
                         <Icon link circular inverted={theme} color='teal' name='instagram' />
                     </a>
             </Segment>
-        </Container>
         </Trans>
-        <br></br>
         <Trans>
-        <Container>
             <Segment inverted={theme} padded>
                 <Form inverted={theme} >
                     <Form.Group widths='equal' >
@@ -78,7 +74,6 @@ export default function Projects({theme}) {
                     />
                 </Form>
             </Segment>
-        </Container>
         </Trans>
         
     </>)

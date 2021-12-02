@@ -66,7 +66,6 @@ export default function Projects({theme}) {
 
     return(<>
         <Trans>
-        <Container>
             <Segment inverted={theme} placeholder={loading || error} loading={loading}>
                 <Dropdown
                 search
@@ -93,7 +92,6 @@ export default function Projects({theme}) {
                     })}
                 </Item.Group>
             </Segment>
-        </Container>
         </Trans>
         
     </>)

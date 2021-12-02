@@ -10,7 +10,6 @@ export default function Home({theme}) {
     
     return (<>
     <Trans>
-        <Container fluid>
             <Segment inverted={theme} very padded size={width<480 ? 'small' : 'big'}>
                 <Grid doubling stackable divided columns='equal'>
                     <Grid.Row centered divided>
@@ -49,11 +48,8 @@ export default function Home({theme}) {
                     </Grid.Row>
                 </Grid>
             </Segment>
-        </Container>
         </Trans>
-        <br></br>
         <Trans>
-        <Container fluid>
             <Segment inverted={theme} very padded='very' size={width<480 ? 'small' : 'big'}>
                 <Grid stackable divided={width<480 ? true : false} padded stretched columns='equal'>
                     <Grid.Row centered divided>
@@ -71,13 +67,10 @@ export default function Home({theme}) {
                     </Grid.Row>
                 </Grid>
             </Segment>
-        </Container>
         </Trans>
-        <br></br>
         <Trans>
-            <Container fluid>
                 <Segment inverted={theme} padded>
-                    <Grid stackable divided={width<480 ? true : false} padded stretched columns='equal'>
+                    <Grid stackable divided={width<480 ? true : false} stretched columns='equal'>
                         <Header inverted={theme} size='huge'>
                             Other interests...
                         </Header>
@@ -103,7 +96,6 @@ export default function Home({theme}) {
                         </Grid.Row>
                     </Grid>
                 </Segment>
-            </Container>
         </Trans>
     </>)
 }

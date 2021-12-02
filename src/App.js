@@ -168,8 +168,8 @@ function App() {
 
   return(<>
     
-    <Grid container doubling relaxed centered columns={width >= 1300 ? '2' : '1'}>
-      <Grid.Column stretched largeScreen={8} computer={12} tablet={16} mobile={16}>
+    <Grid container doubling centered columns={width >= 1300 ? '2' : '1'}>
+      <Grid.Column largeScreen={8} computer={12} tablet={16} mobile={16}>
                 <br></br>
                 <Message
                   warning
@@ -177,6 +177,7 @@ function App() {
                   header='This portfolio is still under construction.'
                   content='Built using the MERN stack. (MongoDB, Express, React, and NodeJS) Additionally styled with Semantic UI. '
                 />
+              
               <Routes>
                 <Route exact path="/Contact" element={<Contact theme={theme} />}>
                 </Route>  
@@ -202,7 +203,7 @@ function App() {
           </Rail>}
       </Grid.Column>
     </Grid>
-    {width < 1300 && <MobileNav objectRef={objectRef} />}
+    {width < 1300 && <MobileNav theme={theme} onThemeChange={handleThemeChange} />}
     <Particles id="tsparticles" init={particlesInit} loaded={particlesLoaded} options={options} />
   </>)
 }

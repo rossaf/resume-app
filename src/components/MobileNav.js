@@ -18,8 +18,7 @@ export default function Navbar({theme, onThemeChange, objectRef}) {
       setActive(e.target.id)
   }
   return (<>
-    <Menu fluid fixed='bottom' inverted={!theme} size='large'>
-      <Container>
+    <Menu fluid widths='7' icon='labeled' fixed='bottom' inverted={theme} size='small'>
             <Link to="/">
               <Menu.Item
                 name='home'
@@ -56,8 +55,20 @@ export default function Navbar({theme, onThemeChange, objectRef}) {
                 onClick={handleMenuClick}
               />
             </Link>
-            </Container>
+            <Menu.Item
+                name='theme'
+                id='theme'
+                color={!theme && 'green'}
+                icon='sun'
+                active={!theme}
+                onClick={onThemeChange}
+              />
           </Menu>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
 
   </>)
 }
