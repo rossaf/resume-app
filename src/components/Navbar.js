@@ -1,6 +1,6 @@
-import {useState, useEffect} from "react"
-import {Link} from "react-router-dom"
-import { Segment, Menu, Header, Button, Message, Icon } from 'semantic-ui-react'
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { Button, Header, Menu, Segment } from 'semantic-ui-react';
 
 
 

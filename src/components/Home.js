@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from "react"
-import { Container, Header, Image, Grid, Segment, Icon, Divider} from 'semantic-ui-react'
-import Trans from "./Trans.js"
-import useWindowDimensions from "./useWindowDimensions.js"
+import React from "react";
+import { Grid, Header, Icon, Image, Segment } from 'semantic-ui-react';
+import Trans from "./Trans.js";
+import useWindowDimensions from "./useWindowDimensions.js";
 
 
 

@@ -1,6 +1,6 @@
-import {useState, useEffect} from "react"
-import {Link} from "react-router-dom"
-import { Segment, Menu, Header, Container, Sidebar, Icon, Grid, Checkbox, Sticky } from 'semantic-ui-react'
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { Menu } from 'semantic-ui-react';
 
 
 export default function Navbar({theme, onThemeChange, objectRef}) {

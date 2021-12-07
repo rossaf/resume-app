@@ -1,7 +1,5 @@
-import { tsObjectKeyword } from "@babel/types"
-//import e from "cors"
-import React, {useEffect, useState} from "react"
-import { Grid, Item, Label, Container, Segment, Dimmer, Loader, Message, Dropdown, Input } from "semantic-ui-react"
+import React, { useEffect, useState } from "react"
+import { Dimmer, Dropdown, Item, Loader, Message, Segment } from "semantic-ui-react"
 import Project from "./Project.js"
 import Trans from "./Trans.js"
 
@@ -18,18 +16,7 @@ export default function Projects({theme}) {
         fetch("https://portfolio-server-2021.herokuapp.com/projects")
         .then(response => response.json())
         .then(data => {
-            console.log(filter)
-            if (filter.length > 0) {
-                setProjects(data.filter((option, index) => {
-                    console.log(option.tags.some(curr => filter.includes(curr)))
-                    return option.tags.some(curr => filter.includes(curr))
-                }))
-                
-            } else {
-                setProjects(data)
-            }
-            console.log(projects)
-            setLoading(false)
+            filterTags(data)
         })
         .catch(err => {
             setError(err)
@@ -50,6 +37,21 @@ export default function Projects({theme}) {
         })
         
     }, [projects])
+
+    function filterTags(data) {
+        if (filter.length > 0) {
+            setProjects(data.filter((option, index) => {
+                if(filter.every(f => option.tags.includes(f))){
+                    return option
+                }
+            }))
+            
+        } else {
+            setProjects(data)
+        }
+        console.log(projects)
+        setLoading(false)
+    }
 
     const renderLabel = (e) => ({
         color: 'blue',

@@ -1,18 +1,18 @@
-import React, {useState, useRef} from "react"
-import './App.css';
-import 'semantic-ui-css/semantic.min.css'
-import { Routes, Route } from "react-router-dom"
-import { Grid, Rail, Sticky, Message, Segment, Container, Popup, Button, Ref } from 'semantic-ui-react'
+import React, { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import Particles from "react-tsparticles";
-import useWindowDimensions from "./components/useWindowDimensions.js"
+import 'semantic-ui-css/semantic.min.css';
+import { Grid, Message, Rail, Sticky } from 'semantic-ui-react';
+import './App.css';
+import Contact from "./components/Contact.js";
+import Home from "./components/Home.js";
+import MobileNav from "./components/MobileNav.js";
+import Navbar from "./components/Navbar.js";
+import Projects from "./components/Projects.js";
+import Resume from "./components/Resume.js";
+import useWindowDimensions from "./components/useWindowDimensions.js";
 
 
-import Navbar from "./components/Navbar.js"
-import Home from "./components/Home.js"
-import Projects from "./components/Projects.js"
-import Resume from "./components/Resume.js"
-import Contact from "./components/Contact.js"
-import MobileNav from "./components/MobileNav.js"
 
 function App() {
   const [theme, setTheme] = useState(true)

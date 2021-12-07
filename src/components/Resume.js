@@ -1,9 +1,9 @@
-import React, {useState} from "react"
-import { Container, Header, Modal, Button, Segment, Dimmer} from 'semantic-ui-react'
-import { Document, Page } from 'react-pdf/dist/esm/entry.webpack'
+import React, { useState } from "react";
+import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
-import useWindowDimensions from "./useWindowDimensions.js"
-import Trans from "./Trans.js"
+import { Segment } from 'semantic-ui-react';
+import Trans from "./Trans.js";
+import useWindowDimensions from "./useWindowDimensions.js";
 
 
 export default function Resume({theme}) {

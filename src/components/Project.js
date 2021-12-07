@@ -1,6 +1,5 @@
 import React from "react"
-import {Header, Item, Label, Segment} from "semantic-ui-react"
-import { DIRECTIONAL_TRANSITIONS } from "semantic-ui-react/dist/es/lib/SUI"
+import { Item, Label, Segment } from "semantic-ui-react"
 
 export default function Project({key, details, theme}) {
     const tags = details.tags

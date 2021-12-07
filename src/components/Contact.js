@@ -1,9 +1,7 @@
-import { tsObjectKeyword } from "@babel/types"
 //import e from "cors"
-import React, {useEffect, useState} from "react"
-import { Grid, Item, Label, Container, Segment, Form, Button, TextArea, Icon, Input, Header } from "semantic-ui-react"
-import Project from "./Project.js"
-import Trans from "./Trans.js" 
+import React from "react"
+import { Button, Form, Header, Icon, Input, Segment, TextArea } from "semantic-ui-react"
+import Trans from "./Trans.js"
 
 export default function Projects({theme}) {
 
