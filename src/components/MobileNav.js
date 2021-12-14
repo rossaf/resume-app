@@ -1,22 +1,10 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu } from 'semantic-ui-react';
 
 
 export default function Navbar({theme, onThemeChange, objectRef}) {
-  const [active, setActive] = useState("home");
-  const [time, setTime] = useState(new Date())
-  const [visible, setVisible] = useState(true)
+  const active = useLocation();
 
-  useEffect(() => {
-    setInterval(() => {
-      setTime(new Date())
-    }, 1000)
-  }, [])
-  function handleMenuClick(e) {
-      console.log(e.target)
-      setActive(e.target.id)
-  }
   return (<>
     <Menu fluid widths='7' icon='labeled' fixed='bottom' inverted={theme} size='small'>
             <Link to="/">
@@ -24,8 +12,7 @@ export default function Navbar({theme, onThemeChange, objectRef}) {
                 name='home'
                 icon='home'
                 id='home'
-                active={active === 'home'}
-                onClick={handleMenuClick}
+                active={active.pathname === '/'}
               />
             </Link>
             <Link to="/projects">
@@ -33,8 +20,7 @@ export default function Navbar({theme, onThemeChange, objectRef}) {
                 name='projects'
                 id='projects'
                 icon='code branch'
-                active={active === 'projects'}
-                onClick={handleMenuClick}
+                active={active.pathname === '/projects'}
               />
             </Link>
             <Link to="/resume">
@@ -42,8 +28,7 @@ export default function Navbar({theme, onThemeChange, objectRef}) {
                 name='resume'
                 id='resume'
                 icon='download'
-                active={active === 'resume'}
-                onClick={handleMenuClick}
+                active={active.pathname === '/resume'}
               />
             </Link>
             <Link to="/contact">
@@ -51,8 +36,7 @@ export default function Navbar({theme, onThemeChange, objectRef}) {
                 name='contact'
                 id='contact'
                 icon='mail'
-                active={active === 'contact'}
-                onClick={handleMenuClick}
+                active={active.pathname === '/contact'}
               />
             </Link>
             <Menu.Item

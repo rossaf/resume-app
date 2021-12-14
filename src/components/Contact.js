@@ -7,26 +7,23 @@ export default function Projects({theme}) {
 
     return(<>
         <Trans>
-            <Segment inverted={theme} padded>
+            <Segment inverted={theme} padded color='teal'>
                 <Header as='h5'>
                     <Icon name='phone' />
                     (201)-903-2265
                 </Header>
                 <Header as='h5'>
                     <Icon name='mail' />
-                    rossfarcas7@gmail.com
+                    contact@rossfarcas.com
                 </Header>
-                    <a href='https://www.linkedin.com/in/ross-farcas-87ba50184/' target="_blank">
+                    <a href='https://www.linkedin.com/in/ross-farcas-87ba50184/' target="_blank" rel="noreferrer">
                         <Icon link circular inverted={theme} color='teal' name='linkedin' />
                     </a>
-                    <a href='https://github.com/rossaf' target="_blank">
+                    <a href='https://github.com/rossaf' target="_blank" rel="noreferrer">
                         <Icon link circular inverted={theme} color='teal' name='github square' />
                     </a>
-                    <a href='https://www.linkedin.com/in/ross-farcas-87ba50184/' target="_blank">
+                    <a href='https://twitter.com/ross_farcas' target="_blank" rel="noreferrer">
                         <Icon link circular inverted={theme} color='teal' name='twitter' />
-                    </a>
-                    <a href='https://www.linkedin.com/in/ross-farcas-87ba50184/' target="_blank">
-                        <Icon link circular inverted={theme} color='teal' name='instagram' />
                     </a>
             </Segment>
         </Trans>

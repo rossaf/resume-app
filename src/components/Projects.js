@@ -10,13 +10,26 @@ export default function Projects({theme}) {
     const [tags, setTags] = useState([])
     const [filter, setFilter] = useState([])
     
+    const renderProjects = projects.map(
+        project => <Project key={project._id} theme={theme} details={project} />)
 
     useEffect(() => {
         setError()
         fetch("https://portfolio-server-2021.herokuapp.com/projects")
         .then(response => response.json())
         .then(data => {
-            filterTags(data)
+            if (filter.length > 0) {
+                setProjects(data.filter((option) => {
+                    if(filter.every(f => option.tags.includes(f))){
+                        return option
+                    }
+                    return null
+                }))
+                
+            } else {
+                setProjects(data)
+            }
+            setLoading(false)
         })
         .catch(err => {
             setError(err)
@@ -38,33 +51,17 @@ export default function Projects({theme}) {
         
     }, [projects])
 
-    function filterTags(data) {
-        if (filter.length > 0) {
-            setProjects(data.filter((option, index) => {
-                if(filter.every(f => option.tags.includes(f))){
-                    return option
-                }
-            }))
-            
-        } else {
-            setProjects(data)
-        }
-        console.log(projects)
-        setLoading(false)
-    }
-
     const renderLabel = (e) => ({
-        color: 'blue',
+        color: 'teal',
         content: `${e.text}`,
         icon: 'check',
       })
 
     function handleSearchChange(e, data) {
         setFilter(data.value)
-        console.log(filter)
     }
 
-      
+    console.log(projects)
 
     return(<>
         <Trans>
@@ -89,9 +86,7 @@ export default function Projects({theme}) {
                     </Message>
                 }
                 <Item.Group divided>
-                    {projects && projects.map(project => {
-                        return <Project key={project.id} theme={theme} details={project} />
-                    })}
+                    {projects && renderProjects}
                 </Item.Group>
             </Segment>
         </Trans>

@@ -8,8 +8,7 @@ import useWindowDimensions from "./useWindowDimensions.js";
 
 export default function Resume({theme}) {
     const [numPages, setNumPages] = useState(null);
-    const [open, setOpen] = React.useState(false) 
-    const { height, width } = useWindowDimensions();
+    const { width } = useWindowDimensions();
 
     function pdfWidth() {
         if (width < 1200) {

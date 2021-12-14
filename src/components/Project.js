@@ -1,10 +1,10 @@
 import React from "react"
 import { Item, Label, Segment } from "semantic-ui-react"
 
-export default function Project({key, details, theme}) {
+export default function Project({details, theme}) {
     const tags = details.tags
     return (
-        <Item key={key} as="Segment">
+        <Item>
             <Item.Image src={details.image} />
             <Item.Content>
                 <Item.Header className={theme && "ui grey inverted header"} as='a'>
@@ -16,8 +16,8 @@ export default function Project({key, details, theme}) {
                     </Segment>
                 </Item.Description>
                 <Item.Extra> 
-                    {tags && tags.map((tag, index) => {
-                        return <Label key={index} content={tag} />
+                    {tags && tags.map((tag) => {
+                        return <Label key={tag} content={tag} color="teal" />
                     })}
                 </Item.Extra>
             </Item.Content>
