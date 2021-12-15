@@ -13,7 +13,8 @@ export default function Navbar({theme}) {
                 screenName: 'ross_farcas'
             }}
             options={{
-                height: '700'
+                height: '700',
+                theme: theme ? 'dark' : 'light'
             }}
             />
         </Segment>
