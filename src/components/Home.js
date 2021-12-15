@@ -32,13 +32,13 @@ export default function Home({theme}) {
                                     As an individual, I am a driven self learner, who is motivated to become an efficient, result oriented developer. My future goals are to become a key engineer for a widely used web application.
                                 </p>
                                 <a href='https://www.linkedin.com/in/ross-farcas-87ba50184/' target="_blank" rel="noreferrer">
-                                    <Icon link circular inverted={theme} color='teal' name='linkedin' />
+                                    <Icon link circular inverted={true} color='teal' name='linkedin' />
                                 </a>
                                 <a href='https://github.com/rossaf' target="_blank" rel="noreferrer">
-                                    <Icon link circular inverted={theme} color='teal' name='github square' />
+                                    <Icon link circular inverted={true} color='teal' name='github square' />
                                 </a>
                                 <a href='https://twitter.com/ross_farcas' target="_blank" rel="noreferrer">
-                                    <Icon link circular inverted={theme} color='teal' name='twitter' />
+                                    <Icon link circular inverted={true} color='teal' name='twitter' />
                                 </a>
                             </Segment>
                         </Grid.Column>
@@ -47,10 +47,10 @@ export default function Home({theme}) {
             </Segment>
         </Trans>
         <Trans>
-            <Segment inverted={theme} padded='very' size={width<480 ? 'small' : 'big'} color="teal">
+            <Segment inverted={true} padded='very' size={width<480 ? 'small' : 'big'} color="teal">
                 <Grid stackable divided={width<480 ? true : false} padded stretched columns='equal'>
                     <Grid.Row centered divided>
-                            <Header inverted={theme} size='huge'>
+                            <Header inverted={true} size='huge'>
                                 I'm a full-stack web developer, specializing in the MongoDB, Express, React, and NodeJS stack.
                             </Header>
                     </Grid.Row>

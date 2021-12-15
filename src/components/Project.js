@@ -11,7 +11,7 @@ export default function Project({details, theme}) {
                     {details.title}
                 </Item.Header>
                 <Item.Description>
-                    <Segment inverted={theme}>
+                    <Segment inverted={theme} basic compact>
                         {details.description}
                     </Segment>
                 </Item.Description>

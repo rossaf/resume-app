@@ -61,7 +61,7 @@ export default function Navbar({theme, shape, onThemeChange, onShapeChange, onCo
               />
             </NavLink>
           </Menu>
-          <Segment inverted={theme} padded color='teal' textAlign='left'>
+          <Segment inverted={true} padded color='teal' textAlign='left'>
             <Header as='h1'>
               {time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric' })}
             </Header>
