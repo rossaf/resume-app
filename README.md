@@ -1,8 +1,12 @@
-#2021 Resume App
-This i
+# 2021 Resume App
 
-#Description
-This is my first fullstack MERN(MongoDB, Express, React, NodeJS) project using SemanticUI as a CSS resource.
+## Introduction
 
-#https://www.rossfarcas.com/projects
+> This is my first fullstack MERN(MongoDB, Express, React, NodeJS) project using SemanticUI as a CSS resource.
+
+## Code Samples
+
+> https://www.rossfarcas.com/projects
+
+## Installation
 
